@@ -3,8 +3,17 @@
     padding: 0;
 }
 p {
-	margin: 5px;
 	font-size: 20px;
+	padding: 2px 10px;
+	border-collapse: collapse;
+	border-bottom: 1px solid gray;
+}
+p:nth-last-child(-n+2){
+	border-bottom: none;
+}
+p:nth-child(odd){
+	border-right: 1px solid gray;
+	font-weight: bold;
 }
 @font-face {
 	font-family: "Ermilov";
@@ -18,7 +27,7 @@ h1 {
 	text-align: center;
 	color:  white;
 	display: block;
-	margin: 30px 10% 0;
+	margin: 30px 25% 0;
 	padding: 0 15px;
 	background: #2E2F45;
 	mix-blend-mode: multiply;
@@ -78,31 +87,43 @@ h6 {
 	font-size: 20px;
 	color:  white;
 	display: block;
-	margin: 0 10% 30px;
+	margin: 0 25% 30px;
 	padding: 20px 15px;
 	background: #2E2F45;
 	mix-blend-mode: multiply;
 	border-radius: 0 0 50px 50px;
 }
 body {
-  background: linear-gradient(90deg, #e5f1ff, #ffb8b8, #fbffb8, #fcffe5, #fff7e5, #e5f1ff);
-  animation: background 15s infinite alternate;
+	background: linear-gradient(90deg, #e5f1ff, #ffb8b8, #fbffb8, #fcffe5, #fff7e5, #e5f1ff);
+	animation: background 15s infinite alternate;
 }
 @keyframes background {
-  100% {
-    background-position: 2000px 0;
-  }
+	100% {
+		background-position: 2000px 0;
+	}
 }
 div {
 	position: relative;
 	transition-duration: .3s;
-	margin: 0 10%;
+	margin: 0 25%;
 	padding: 5px;
-  background: linear-gradient(90deg, #ffffff 33%, #ecdaff, #71bbff);
-  border: 2px solid gray;
-  z-index: 100;
+	background: linear-gradient(90deg, #ffffff 33%, #ecdaff, #71bbff);
+	border: 2px solid gray;
+	z-index: 100;
 }
-.auto{
+.car{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	padding: 0 5%;
+}
+img{
+	width: 250px;
+	transition: 1s;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+img:hover{
+	width: 250px;
+	transform: scale(2.0);
+	box-shadow: 5px 5px 5px gray;
 }
