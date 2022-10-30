@@ -15,6 +15,7 @@ p:nth-last-child(-n+2){
 p:nth-child(odd){
 	border-right: 1px solid gray;
 	font-weight: bold;
+	text-align: right;
 }
 @font-face {
 	font-family: "Ermilov";

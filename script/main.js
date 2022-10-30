@@ -144,7 +144,6 @@ autoDB[i].color = "Черный";
 autoDB[i].body = "Внедорожник 5 дв"; 
 autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
 
-
 //Добавляем новый объект
 autoDB.push(new Auto(
 	'Lamborghini', 
@@ -157,6 +156,202 @@ autoDB.push(new Auto(
 i++;
 autoDB[i].color = "Синий"; 
 autoDB[i].body = "Внедорожник 5 дв"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Dodge', 
+	'Ram', 
+	190000,
+	'бензин',
+	'6.2',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Оранжевый"; 
+autoDB[i].body = "Пикап"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Land Rover', 
+	'Defender', 
+	138000,
+	'бензин',
+	'3.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Черный"; 
+autoDB[i].body = "Внедорожник 5 дв"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Tesla', 
+	'Model X', 
+	123980,
+	'бензин',
+	'3.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Красный"; 
+autoDB[i].body = "Купе"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Jaguar', 
+	'F-Type', 
+	125000,
+	'электро',
+	false,
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Красный"; 
+autoDB[i].body = "Внедорожник 5 дв"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Audi', 
+	'RS Q8', 
+	265000,
+	'бензин',
+	'4.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Серый"; 
+autoDB[i].body = "Внедорожник 5 дв"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Porsche', 
+	'Panamera 970', 
+	54000,
+	'бензин',
+	'3.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Коричневый"; 
+autoDB[i].body = "Лифтбек"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Cadillac', 
+	'Escalade V', 
+	222603,
+	'бензин',
+	'6.2',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Черный"; 
+autoDB[i].body = "Внедорожник 5 дв"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Bentley', 
+	'Continental GT II', 
+	219000,
+	'бензин',
+	'6.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Зеленый";
+autoDB[i].body = "Купе";
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Mercedes-Benz', 
+	'V-Класс W447', 
+	200000,
+	'дизель',
+	'2.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Зеленый";
+autoDB[i].body = "Купе";
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Porsche', 
+	'911', 
+	169500,
+	'бензин',
+	'3.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Зеленый";
+autoDB[i].body = "Купе";
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Land Rover',
+	'Range Rover IV',
+	164900,
+	'дизель',
+	'4.4',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Черный";
+autoDB[i].body = "Внедорожник 5 дв";
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Porsche',
+	'Taycan',
+	146525,
+	'электро',
+	false,
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Белый";
+autoDB[i].body = "Седан";
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Ferrari',
+	'488 GTB',
+	300000,
+	'бензин',
+	'3.9',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Красный";
+autoDB[i].body = "Купе";
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Mercedes-Benz',
+	'Maybach Z223',
+	519075,
+	'бензин',
+	'6.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Черный";
+autoDB[i].body = "Седан";
 autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
 
 //БЛОК ОТОБРАЖЕНИЯ НА СТРАНИЦЕ
