@@ -40,7 +40,7 @@ autoDB.push(new Auto(
 	'4.7',
 	));
 //опциональные свойства
-i = 0;
+i = 0; //нач.значение индекса
 autoDB[i].color = "Синий"; 
 autoDB[i].body = "Купе"; 
 autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
@@ -54,7 +54,7 @@ autoDB.push(new Auto(
 	false,
 	));
 //опциональные свойства
-i = 1;
+i++; //автосмена значения индекса
 autoDB[i].range = 450 + ' км';
 autoDB[i].color = "Красный";
 autoDB[i].body = "Внедорожник 5 дв";
@@ -69,7 +69,7 @@ autoDB.push(new Auto(
 	'5.0',
 	));
 //опциональные свойства
-i = 2;
+i++;
 autoDB[i].color = "Белый"; 
 autoDB[i].body = "Купе"; 
 autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
@@ -83,7 +83,7 @@ autoDB.push(new Auto(
 	'3.6',
 	));
 //опциональные свойства
-i = 3;
+i++;
 autoDB[i].color = "Gold Rush"; 
 autoDB[i].body = "Купе"; 
 autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
@@ -97,11 +97,67 @@ autoDB.push(new Auto(
 	'2.0',
 	));
 //опциональные свойства
-i = 4;
+i++;
 autoDB[i].color = "Красный"; 
 autoDB[i].body = "Купе"; 
 autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
 
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Hummer', 
+	'H2', 
+	50000,
+	'бензин',
+	'6.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Белый"; 
+autoDB[i].body = "Лимузин"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'BMW', 
+	'X4M', 
+	93000,
+	'бензин',
+	'3.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Красный"; 
+autoDB[i].body = "Внедорожник 5 дв"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Mercedes-Benz', 
+	'G-Класс AMG', 
+	140000,
+	'бензин',
+	'5.5',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Черный"; 
+autoDB[i].body = "Внедорожник 5 дв"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
+
+
+//Добавляем новый объект
+autoDB.push(new Auto(
+	'Lamborghini', 
+	'Urus', 
+	360000,
+	'бензин',
+	'4.0',
+	));
+//опциональные свойства
+i++;
+autoDB[i].color = "Синий"; 
+autoDB[i].body = "Внедорожник 5 дв"; 
+autoDB[i].image = `<img src='./imageDB/000${i}.jpg'>`;
 
 //БЛОК ОТОБРАЖЕНИЯ НА СТРАНИЦЕ
 
@@ -178,6 +234,9 @@ let scroll = () => {
     });
 };
 
+//функция проверки сл.страницы
+let tester = () => {return autoDB[index * item] !== undefined};
+
 //функция кнопка "Назад"
 let back = () => {
     if (index == 1) buttonBack.classList.add('not');
@@ -194,14 +253,17 @@ let back = () => {
 
 //функция кнопка "Дальше"
 let next = () => {
-    test = autoDB[index * item] !== undefined;//проверка 1-й позиции на сл.странице
-    if (test == true) {//проверка следующей страницы
+    tester()
+    if (tester() == true) {//проверка следующей страницы
         index += 1;
         delet();
         pageItem(index);
         pageNumber(index);
-        buttonNext.classList.add('not');
         scroll();
-    };
+    } else if (tester() == false) {
+        buttonNext.classList.add('not');
+	};
+	tester();
+	if (tester() == false) buttonNext.classList.add('not');
     if (index == 2) buttonBack.classList.remove('not');
 };
