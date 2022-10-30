@@ -118,7 +118,7 @@ let addProperty = (inHtml) => {
 	j++;
 };
 
-//функция преобразования кода свойств в текст
+//функция преобразования кодировки свойств в текст
 let propertyString = (prop) => {
 	if (prop == 'brand') return 'Бренд';
 	if (prop == 'model') return 'Модель';
@@ -133,11 +133,47 @@ let propertyString = (prop) => {
 };
 
 //цикл наполнения всех объектов со всеми параметрами в таблицу
-for (let i = 0; i <= autoDB.length; i++){
-	for (let property in autoDB[i]) {
-		addProperty(propertyString(property));//доб. названия свойства с преобразованием
-		addProperty(autoDB[i][property]);//доб. значения свойства
-	};
-	//вставить пустую строку, если есть еще машины в базе данных
-	autoDB[i+1] ? (addProperty('&nbsp;<br>&nbsp;'), addProperty('&nbsp;<br>&nbsp;')) : false;
+//показ страничек
+let page = (num) => {
+    index = num
+    const item = 3; //количество контента на странице
+    let fromItem = num * item - item; //начало выборки
+    let toItem = num * item - 1; //конец выборки
+    for (let i = fromItem; i <= toItem; i++){ //прокрутка по базе данных
+	    for (let property in autoDB[i]) { //прокрутка по свойствам
+	    	addProperty(propertyString(property));//доб. названия свойства с преобразованием
+	    	addProperty(autoDB[i][property]);//доб. значения свойства
+	    };
+	    //вставить пустую не последнюю строку, если есть еще машины в базе данных
+        if (i !== toItem) {
+	        autoDB[i+1] ? (addProperty('&nbsp;<br>&nbsp;'), addProperty('')) : false;
+        };
+    };
 };
+
+//функция очистки страницы от объектов
+let delet = () => {
+    let del = document.querySelectorAll('p');
+    del.forEach((e) => {e.remove()});
+}
+//отображение текущей страницы
+let pageNumber = (i) => {
+    document.querySelector('u').innerHTML = i
+}
+//СТРАНИЧКИ
+let index = 1; //начальная страница
+page(index) //вызов 1-й страницы
+
+let back = () => { //функция "назад"
+    delet();
+    page(index-1);
+    pageNumber(index)
+}
+
+let next = () => { //функция "дальше"
+    delet();
+    page(index+1);
+    pageNumber(index);
+}
+//баг - страницы 0, -1 и тд.
+//баг - страницы вперед с пустыми значениями

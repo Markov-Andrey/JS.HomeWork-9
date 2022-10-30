@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+	text-decoration: none;
 }
 p {
 	font-size: 20px;
@@ -33,13 +34,16 @@ h1 {
 	mix-blend-mode: multiply;
 	border-radius: 50px 50px 0 0;
 }
-h2 {
+u {
+	font-family: "Ermilov";
 	display: inline-block;
-	margin: 1px 3%;
-	padding: 0 5px;
-	font-size: 20px;
-	border: 1px dotted black;
-	background-color: white;
+	font-size: 45px;
+	color: black;
+	background: white;
+	border-radius: 100%;
+	width: 50px;
+	height: 50px;
+	border: 2px solid black;
 }
 h3 {
 	transition-duration: .5s;
@@ -83,8 +87,9 @@ h5 {
 	mix-blend-mode: multiply;
 	border-radius: 0 0 50px 50px;
 }
-h6 {
-	font-size: 20px;
+footer {
+	text-align: center;
+	font-size: 35px;
 	color:  white;
 	display: block;
 	margin: 0 25% 30px;
@@ -92,6 +97,13 @@ h6 {
 	background: #2E2F45;
 	mix-blend-mode: multiply;
 	border-radius: 0 0 50px 50px;
+	position: relative;
+	transition-duration: .3s;
+	margin: 0 25%;
+	padding: 5px;
+	background: #2E2F45;
+	border: 2px solid gray;
+	z-index: 100;
 }
 body {
 	background: linear-gradient(90deg, #e5f1ff, #ffb8b8, #fbffb8, #fcffe5, #fff7e5, #e5f1ff);
@@ -121,9 +133,31 @@ img{
 	transition: 1s;
 	border: 1px solid black;
 	border-radius: 10px;
+	mix-blend-mode: normal;
+	z-index: 100;
 }
 img:hover{
 	width: 250px;
 	transform: scale(2.0);
 	box-shadow: 5px 5px 5px gray;
+}
+.back, .next{
+	font-family: "Ermilov";
+	font-size: 25px;
+	width: 200px;
+	height: 75px;
+	border-radius: 15px;
+}
+.back:hover, .next:hover {
+	background: rgb(255, 200, 200);
+	filter: saturate(200%);
+	cursor: pointer;
+}
+.back:active, .next:active {
+	background: rgb(255, 200, 200);
+	filter: saturate(500%);
+	cursor: pointer;
+}
+.hide {
+	display: none;
 }
