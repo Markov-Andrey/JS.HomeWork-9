@@ -132,9 +132,10 @@ let propertyString = (prop) => {
 	if (prop == 'range') return 'Дальность хода';
 };
 
+//БЛОК СМЕНА СТРАНИЧЕК
+
 //цикл наполнения всех объектов со всеми параметрами в таблицу
-//показ страничек
-let page = (num) => {
+let pageItem = (num) => {
     index = num
     const item = 3; //количество контента на странице
     let fromItem = num * item - item; //начало выборки
@@ -160,20 +161,31 @@ let delet = () => {
 let pageNumber = (i) => {
     document.querySelector('u').innerHTML = i
 }
+
 //СТРАНИЧКИ
+
 let index = 1; //начальная страница
-page(index) //вызов 1-й страницы
+pageItem(index); //вызов 1-й страницы
+const buttonBack = document.querySelector('.back'); //ловим кнопку "назад"
 
 let back = () => { //функция "назад"
-    delet();
-    page(index-1);
-    pageNumber(index)
-}
+    index <= 1 ? index = 1 : index -= 1;
+    console.log(index);
+    if (index == 1) buttonBack.classList.add('not');
+    if (index >= 1) {
+        delet();
+        pageItem(index);
+        pageNumber(index);
+    };
+};
 
 let next = () => { //функция "дальше"
+    index >= 1 ? index += 1 : index;
+    if (i >= 2) buttonBack.classList.remove('not');
+    console.log(index)
     delet();
-    page(index+1);
+    pageItem(index);
     pageNumber(index);
-}
-//баг - страницы 0, -1 и тд.
+};
+
 //баг - страницы вперед с пустыми значениями

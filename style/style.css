@@ -103,7 +103,10 @@ footer {
 	padding: 5px;
 	background: #2E2F45;
 	border: 2px solid gray;
-	z-index: 100;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
 }
 body {
 	background: linear-gradient(90deg, #e5f1ff, #ffb8b8, #fbffb8, #fcffe5, #fff7e5, #e5f1ff);
@@ -158,6 +161,11 @@ img:hover{
 	filter: saturate(500%);
 	cursor: pointer;
 }
-.hide {
-	display: none;
+.not {
+	color: gray;
+}
+.not:hover, .not:active {
+	background: white;
+	cursor: not-allowed;
+	filter: none;
 }
