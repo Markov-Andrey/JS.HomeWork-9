@@ -135,9 +135,9 @@ let propertyString = (prop) => {
 //БЛОК СМЕНА СТРАНИЧЕК
 
 //цикл наполнения всех объектов со всеми параметрами в таблицу
+const item = 3; //количество контента на странице одновременно
 let pageItem = (num) => {
-    index = num
-    const item = 3; //количество контента на странице
+    index = num;
     let fromItem = num * item - item; //начало выборки
     let toItem = num * item - 1; //конец выборки
     for (let i = fromItem; i <= toItem; i++){ //прокрутка по базе данных
@@ -153,39 +153,55 @@ let pageItem = (num) => {
 };
 
 //функция очистки страницы от объектов
+let del;
 let delet = () => {
-    let del = document.querySelectorAll('p');
+    del = document.querySelectorAll('p');
     del.forEach((e) => {e.remove()});
 }
+
 //отображение текущей страницы
-let pageNumber = (i) => {
-    document.querySelector('u').innerHTML = i
-}
+let pageNumber = (i) => document.querySelector('u').innerHTML = i
 
 //СТРАНИЧКИ
 
 let index = 1; //начальная страница
 pageItem(index); //вызов 1-й страницы
 const buttonBack = document.querySelector('.back'); //ловим кнопку "назад"
+const buttonNext = document.querySelector('.next'); //ловим кнопку "вперед"
+let test;
 
-let back = () => { //функция "назад"
-    index <= 1 ? index = 1 : index -= 1;
-    console.log(index);
+//функция плавного скролла
+let scroll = () => {
+    window.scrollTo({
+        top: 450,
+        behavior: "smooth",
+    });
+};
+
+//функция кнопка "Назад"
+let back = () => {
     if (index == 1) buttonBack.classList.add('not');
-    if (index >= 1) {
+    if (index > 1) {
+        index -= 1
         delet();
         pageItem(index);
         pageNumber(index);
+        buttonNext.classList.remove('not');
+        scroll();
     };
+    if (index == 1) buttonBack.classList.add('not');
 };
 
-let next = () => { //функция "дальше"
-    index >= 1 ? index += 1 : index;
-    if (i >= 2) buttonBack.classList.remove('not');
-    console.log(index)
-    delet();
-    pageItem(index);
-    pageNumber(index);
+//функция кнопка "Дальше"
+let next = () => {
+    test = autoDB[index * item] !== undefined;//проверка 1-й позиции на сл.странице
+    if (test == true) {//проверка следующей страницы
+        index += 1;
+        delet();
+        pageItem(index);
+        pageNumber(index);
+        buttonNext.classList.add('not');
+        scroll();
+    };
+    if (index == 2) buttonBack.classList.remove('not');
 };
-
-//баг - страницы вперед с пустыми значениями
