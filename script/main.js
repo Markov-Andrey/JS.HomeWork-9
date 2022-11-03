@@ -4,6 +4,11 @@ const autoDB = []; //База данных автомобилей
 const rateUsdByn = 2.53 //курс доллар - бел.руб
 let i; //индекс для расчетов
 
+//const url = 'https://www.nbrb.by/api/exrates/rates/431';
+//fetch(url)
+//	.then(res => res.json())
+//	.then(out => console.log(out.Cur_OfficialRate));
+
 //класс авто
 class Auto{
 	constructor( //основные параметры
